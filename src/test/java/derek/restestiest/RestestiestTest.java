@@ -38,8 +38,7 @@ public class RestestiestTest {
         .executeTest();
 
 
-    final RecordedRequest recordedRequest = server.takeRequest(400, TimeUnit.MILLISECONDS);
-
+    RecordedRequest recordedRequest = server.takeRequest(400, TimeUnit.MILLISECONDS);
     assertEquals("/endpoint/7/",recordedRequest.getPath());
   }
 
@@ -81,8 +80,7 @@ public class RestestiestTest {
 
     assertEquals("favorite-number\nExpected: 3\n     got: 1000000\n", exception.getMessage());
 
-    final RecordedRequest recordedRequest = server.takeRequest(400, TimeUnit.MILLISECONDS);
-
+    RecordedRequest recordedRequest = server.takeRequest(400, TimeUnit.MILLISECONDS);
     assertEquals("/endpoint/7/",recordedRequest.getPath());
   }
 
