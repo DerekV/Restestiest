@@ -21,7 +21,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class CaseBuilder {
   private static final MediaType JSON = MediaType.parse("application/json");
-  final private String baseUrl;
   final private Request.Builder rqBuilder = new Request.Builder();
   final private HttpUrl.Builder urlBuilder;
   final private List<Function<HttpUrl.Builder, HttpUrl.Builder>> urlCustomizers = new ArrayList<>(1);
@@ -30,7 +29,6 @@ public class CaseBuilder {
   private RequestBody body;
 
   CaseBuilder(String baseUrl) {
-    this.baseUrl = baseUrl;
     this.urlBuilder = HttpUrl.parse(baseUrl).newBuilder();
   }
 
@@ -39,8 +37,8 @@ public class CaseBuilder {
     return this;
   }
 
-  public CaseBuilder withEndpoint(String endpoint) {
-    urlBuilder.addPathSegment(endpoint);
+  public CaseBuilder withPath(String endpoint) {
+    urlBuilder.encodedPath(endpoint);
     return this;
   }
 

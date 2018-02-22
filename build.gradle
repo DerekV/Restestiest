@@ -21,5 +21,7 @@ dependencies {
     compile 'org.hamcrest:hamcrest-all:1.3'
 
 
-    testCompile 'junit:junit:4.11'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.0.1'
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.9.1'
+    testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.0.1'
 }
