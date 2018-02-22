@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+group 'derekv'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.skyscreamer:jsonassert:1.5.0'
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    testCompile 'junit:junit:4.11'
+}
+
